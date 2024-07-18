@@ -2,6 +2,7 @@
 import {
   Button,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   useColorScheme,
@@ -9,21 +10,18 @@ import {
 } from 'react-native';
 import React from 'react';
 import FaltCards from './components/FaltCards';
+import ElevatedCards from './components/ElevatedCards';
 
 
 const App = () => {
-  function handleClick() {
-    console.log('fucntion calling');
-  }
-  const DarkMode = useColorScheme() === 'dark';
+ 
   return (
-    <View style={styles.container}>
-      <Text style={DarkMode ? styles.darkText : styles.whiteText}>
-        Hello Moto
-      </Text>
-      <Button style={styles.text} title="Click on me" onPress={handleClick} />
+   <SafeAreaView>
+    <ScrollView>
       <FaltCards />
-    </View>
+      <ElevatedCards />
+    </ScrollView>
+   </SafeAreaView>
   );
 };
 
@@ -31,17 +29,8 @@ export default App;
 
 const styles = StyleSheet.create({
   container: {
-     flex:2,
-    alignItems: 'center',
+     flex:1,
+    alignItems: 'flex-start',
     justifyContent: 'center',
-  },
-  text: {
-    fontSize: 50,
-  },
-  whiteText: {
-    color: '#36e617',
-  },
-  darkText: {
-    color: '#000000',
   },
 });
