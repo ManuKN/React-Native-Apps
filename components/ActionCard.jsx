@@ -4,14 +4,15 @@ import React from 'react';
 
 const ActionCard = () => {
     const openWebsite = (url) => {
+        console.log('funtion executing');
         Linking.openURL(url).catch((err) => console.error("Cannot open url", err));
     };
   return (
     <View>
-      <Text style={styles.headingText}>ActionCard</Text>
+      <Text style={styles.headingText}>Blog card</Text>
       <View style={styles.container}>
-        <View style={styles.headingCard}>
-          <Text>Blog Card</Text>
+        <View style={styles.title}>
+          <Text style={styles.titlestyles}>Volkswagan - Dus Auto</Text>
         </View>
         <Image
           source={{
@@ -29,10 +30,14 @@ const ActionCard = () => {
             Corporation.
           </Text>
         </View>
-        <View>
+        <View style={styles.navigating}>
           <TouchableOpacity
             onPress={() => openWebsite('https://www.google.com/')}>
-            <Text style={styles.footertext}>Read more...</Text>
+            <Text style={styles.footertext1}>Read more</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => openWebsite('https://www.google.com/')}> 
+            <Text style={styles.footertext1}>Follow me</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -40,7 +45,7 @@ const ActionCard = () => {
   );
 }
 
-export default ActionCard
+export default ActionCard;
 
 const styles = StyleSheet.create({
   headingText: {
@@ -49,12 +54,39 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     padding: 12,
   },
-  container: {paddingHorizontal: 0},
+  title: {justifyContent: 'center', alignItems: 'center'},
+  titlestyles: {color: '#faf9f9', fontSize: 18, paddingVertical: 12},
+  container: {
+    marginHorizontal: 12,
+    backgroundColor: '#1a1a1a',
+    borderRadius: 6,
+  },
   headingCard: {},
   imageStyle: {
     height: 180,
   },
-  descriptionCard: {marginVertical:12},
-  descriptionStyles: {fontSize: 16, fontWeight: 'semibold'},
-  footertext: {fontSize: 17, fontWeight: 'bold' , color:'#000000'},
+  descriptionCard: {marginVertical: 12, paddingHorizontal: 12},
+  navigating: {
+    padding: 12,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  descriptionStyles: {fontSize: 16, fontWeight: 'semibold', color: '#FFFFFF'},
+  footertext1: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#f10a0a',
+    backgroundColor: '#FFFFFF',
+    padding: 6,
+    borderRadius: 4,
+  },
+  footertext2: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#f10a0a',
+    backgroundColor: '#FFFFFF',
+    padding: 6,
+    borderRadius: 4,
+  },
 });

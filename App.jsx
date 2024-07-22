@@ -13,6 +13,7 @@ import FaltCards from './components/FaltCards';
 import ElevatedCards from './components/ElevatedCards';
 import FancyCard from './components/FancyCard';
 import ActionCard from './components/ActionCard';
+import ContactList from './components/ContactList';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <ElevatedCards />
         <FancyCard image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2018_Ford_Mustang_5.0_coupe.jpg/640px-2018_Ford_Mustang_5.0_coupe.jpg" />
         <FancyCard image="https://toyotacanada.scene7.com/is/image/toyotacanada/MY24_GR_Supra_45th_Anniv_Ed_006?ts=1689628506181&dpr=off" />
+        <ContactList />
         <ActionCard />
       </ScrollView>
     </SafeAreaView>

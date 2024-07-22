@@ -19,6 +19,9 @@ const ElevatedCards = () => {
         <View style={[styles.card, styles.ElevatedCard]}>
           <Text>scroll here</Text>
         </View>
+        <View style={[styles.card, styles.ElevatedCard]}>
+          <Text>scroll here</Text>
+        </View>
       </ScrollView>
     </View>
   );
